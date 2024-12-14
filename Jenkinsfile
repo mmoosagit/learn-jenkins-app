@@ -63,8 +63,9 @@ pipeline {
                                 reportName: 'playwright HTML Report', reportTitles: ' ', useWrapperFileDirectly: true])
                             }
                         }
-                    }
                 }
+            }   
+        }
                 stage('Deploy') {
                     agent {
                         docker {
@@ -78,9 +79,8 @@ pipeline {
                         node_modules/.bin/netlify --version 
                         '''
                     }
-                }
-            }            
-        }
-       
+                }                
     }
 }
+
+       
